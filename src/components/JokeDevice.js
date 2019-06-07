@@ -1,12 +1,19 @@
 import React from 'react';
 import JokeText from './JokeText';
-import Loader from './LoadAnimation';
+import LoadAnimation from './LoadAnimation';
 import styled from 'styled-components';
 
 const Button = styled.button`
-        background-color: red
-    
-    `;
+    background-color: red;
+`;
+
+const StyledH3 = styled.h3`
+    font-weight: 800;
+    font-family: fantasy;
+    font-style: italic;
+`;
+
+
 export class JokeDevice extends React.Component{
     constructor(props){
         super(props)
@@ -22,9 +29,9 @@ export class JokeDevice extends React.Component{
     }
 
     calculateLoadTime(){
-        let seconds = Math.floor(Math.random() * 6) + 2;
+        let milliseconds = (Math.floor(Math.random() * 6) + 2) * 1000;
         this.setState({
-            seconds
+            milliseconds
         });
     }
 
@@ -36,6 +43,7 @@ export class JokeDevice extends React.Component{
 
 
     retrieveJoke(e){
+        e.preventDefault();
         fetch("https://icanhazdadjoke.com", 
             {
                 method: "GET",
@@ -52,9 +60,10 @@ export class JokeDevice extends React.Component{
             response.json()
             .then((data)=>{
                 this.setupLoadAndTime();
-                this.setState({
-                    joke: data.joke
-                });
+
+                this.waitToDisplayJoke(data.joke, this.state.milliseconds);
+
+                
             });
         })
         .catch((err)=>{
@@ -62,16 +71,25 @@ export class JokeDevice extends React.Component{
         });
     }
 
+    waitToDisplayJoke(joke, time){
+        setTimeout(()=>{
+            this.setState({
+                joke,
+                loading: false
+            });
+        }, time)     
+    }
+
     render(){
         return(
             <div id="jokeDeviceDiv">
-                <h3>Dad Gummit</h3>
+                <StyledH3>Dad Gummit</StyledH3>
                 <span>PRESS THE BUTTON</span>
                 <Button id="jokeDeviceButton" onClick={(e)=>this.retrieveJoke(e)}></Button>
 
 
                 <JokeText text={this.state.joke}/>
-                <Loader on={this.state.loading} time={this.state.seconds}/>
+                <LoadAnimation on={this.state.loading} time={this.state.milliseconds}/>
             </div>
         )
     }
