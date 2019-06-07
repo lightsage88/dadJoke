@@ -1,7 +1,12 @@
 import React from 'react';
 import JokeText from './JokeText';
 import Loader from './LoadAnimation';
+import styled from 'styled-components';
 
+const Button = styled.button`
+        background-color: red
+    
+    `;
 export class JokeDevice extends React.Component{
     constructor(props){
         super(props)
@@ -62,7 +67,7 @@ export class JokeDevice extends React.Component{
             <div id="jokeDeviceDiv">
                 <h3>Dad Gummit</h3>
                 <span>PRESS THE BUTTON</span>
-                <button id="jokeDeviceButton" onClick={(e)=>this.retrieveJoke(e)}></button>
+                <Button id="jokeDeviceButton" onClick={(e)=>this.retrieveJoke(e)}></Button>
 
 
                 <JokeText text={this.state.joke}/>
