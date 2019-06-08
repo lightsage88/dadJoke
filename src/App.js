@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import pic from './assets/falloutIcon.png';
-import styled, {keyframes} from 'styled-components';
+import styled, {keyframes, createGlobalStyle} from 'styled-components';
 import './App.css';
 import JokeDevice from './components/JokeDevice.js';
 
@@ -10,6 +10,13 @@ class App extends Component {
  
 
   render() {
+
+    const GlobalStyle = createGlobalStyle`
+      html {
+        font-size: 10px;
+      }
+    `;
+
     const lightSpeedIn = keyframes`
       from {
         -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
@@ -72,6 +79,7 @@ class App extends Component {
     `;
     return (
       <div className="App">
+        <GlobalStyle/>
         <div className="App-header">
           <StyledDadHead src={pic} className="App-logo" alt="logo"/>
           <StyledH2>Silly Dad Jokes</StyledH2>
