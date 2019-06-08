@@ -40,9 +40,14 @@ from {
 
 let StyledP = styled.p`
 
-    -webkit-animation: ${bounce} 9s;
-    animation: ${bounce} 9s;
+ 
+    -webkit-animation: ${bounce} 7s;
+    animation: ${bounce} 7s;
+  
+    
 
+    font-family: 'Josefin', serif;
+    font-size: 2.5rem;
 `;
 
 export class JokeText extends React.Component{
@@ -59,7 +64,7 @@ export class JokeText extends React.Component{
         
         return(
             <div id="jokeTextDiv">
-                <StyledP>{this.props.text}</StyledP>
+                <StyledP data-animate={this.props.animateText}>{this.props.text}</StyledP>
             </div>
         );
     }

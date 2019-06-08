@@ -4,9 +4,11 @@ import LoadAnimation from './LoadAnimation';
 import styled from 'styled-components';
 
 const StyledJokeDeviceDiv = styled.div`
-    position: fixed;
+    position: relative;
     width: -webkit-fill-available;
-    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 const Button = styled.button`
@@ -44,7 +46,8 @@ export class JokeDevice extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            loading: false
+            loading: false,
+            animateText: true
         }
     }
 
@@ -107,13 +110,14 @@ export class JokeDevice extends React.Component{
         setTimeout(()=>{
             this.setState({
                 joke,
-                loading: false
+                loading: false,
             });
         }, time)     
     }
 
     render(){
         return(
+        
             <StyledJokeDeviceDiv id="jokeDeviceDiv">
                 <StyledH3>Dad Gummit</StyledH3>
                 <Button id="jokeDeviceButton" onClick={(e)=>this.retrieveJoke()}>
@@ -121,7 +125,7 @@ export class JokeDevice extends React.Component{
                 </Button>
 
 
-                <JokeText text={this.state.joke} />
+                <JokeText text={this.state.joke} animateText={this.state.animateText}/>
                 <LoadAnimation on={this.state.loading} time={this.state.milliseconds}/>
             </StyledJokeDeviceDiv>
         )

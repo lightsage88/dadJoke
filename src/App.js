@@ -15,6 +15,15 @@ class App extends Component {
       html {
         font-size: 10px;
       }
+
+      body {
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+        font-family: 'Josefin', sans-serif;
+
+        @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+        font-family: "Luckiest Guy", serif;
+
+      }
     `;
 
     const lightSpeedIn = keyframes`
@@ -72,19 +81,35 @@ class App extends Component {
       animation: ${lightSpeedIn} 1s;
     `;
 
+    const StyledJokeDeviceWrapper = styled.div`
+      height: -webkit-fill-available;
+      border: solid;
+      display: grid;
+      align-content: center;
+    `;
+
     const StyledH2 = styled.h2`
-      color: red;
+      color: crimson;
       -webkit-animation: ${jackInTheBox} 1s;
       animation: ${jackInTheBox} 1s;
+      font-family: "Luckiest Guy", serif;
+      font-size: 3rem;
+      text-shadow: 0.4rem 0.1rem 0.5rem whitesmoke;
+      -webkit-text-stroke: bisque;
+      -webkit-text-stroke-width: 0.2rem;
+
     `;
     return (
       <div className="App">
         <GlobalStyle/>
-        <div className="App-header">
+        
+        <StyledJokeDeviceWrapper>
+          <div className="App-header">
           <StyledDadHead src={pic} className="App-logo" alt="logo"/>
           <StyledH2>Silly Dad Jokes</StyledH2>
         </div>
-        <JokeDevice/>
+         <JokeDevice/>
+         </StyledJokeDeviceWrapper>
       </div>
     );
   }
