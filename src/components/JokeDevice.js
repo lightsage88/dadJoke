@@ -29,7 +29,7 @@ export class JokeDevice extends React.Component{
     }
 
     calculateLoadTime(){
-        let milliseconds = (Math.floor(Math.random() * 6) + 2) * 1000;
+        let milliseconds = (Math.floor(Math.random() * 1) + 2) * 1000;
         this.setState({
             milliseconds
         });
@@ -44,6 +44,9 @@ export class JokeDevice extends React.Component{
 
     retrieveJoke(e){
         e.preventDefault();
+        this.setState({
+            joke: ''
+        });
         fetch("https://icanhazdadjoke.com", 
             {
                 method: "GET",
@@ -88,7 +91,7 @@ export class JokeDevice extends React.Component{
                 <Button id="jokeDeviceButton" onClick={(e)=>this.retrieveJoke(e)}></Button>
 
 
-                <JokeText text={this.state.joke}/>
+                <JokeText text={this.state.joke} />
                 <LoadAnimation on={this.state.loading} time={this.state.milliseconds}/>
             </div>
         )
