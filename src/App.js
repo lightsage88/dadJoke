@@ -10,7 +10,8 @@ class App extends Component {
  
 
   render() {
-
+//Here we create GlobalStyles, making the html's font-size 10px so that Rems are easier to play with.
+//We also set up some font-families based on CDN Font providers.
     const GlobalStyle = createGlobalStyle`
       html {
         font-size: 10px;
@@ -25,7 +26,7 @@ class App extends Component {
 
       }
     `;
-
+//We use the keyframes module from styled-components to set up an animation for the App's Icon.
     const lightSpeedIn = keyframes`
       from {
         -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
@@ -49,7 +50,7 @@ class App extends Component {
         transform: translate3d(0, 0, 0);
       }
     `;
-
+//We set up an animation with keyframes for the name of the site
     const jackInTheBox = keyframes`
       from {
         opacity: 0;
@@ -75,20 +76,21 @@ class App extends Component {
         transform: scale(1);
       }
     `;
-
-    const StyledDadHead = styled.img`
+//Here we use styled to set up the dadHead image, the wrapper for the component called Joke Device
+//and the SiteTitle that will be our title
+    const SiteIcon = styled.img`
       -webkit-animation: ${lightSpeedIn} 1s;
       animation: ${lightSpeedIn} 1s;
     `;
 
-    const StyledJokeDeviceWrapper = styled.div`
+    const JokeDeviceWrapper = styled.div`
       height: -webkit-fill-available;
       border: solid;
       display: grid;
       align-content: center;
     `;
 
-    const StyledH2 = styled.h2`
+    const SiteTitle = styled.h2`
       color: crimson;
       -webkit-animation: ${jackInTheBox} 1s;
       animation: ${jackInTheBox} 1s;
@@ -97,19 +99,18 @@ class App extends Component {
       text-shadow: 0.4rem 0.1rem 0.5rem whitesmoke;
       -webkit-text-stroke: bisque;
       -webkit-text-stroke-width: 0.2rem;
-
     `;
+
     return (
       <div className="App">
         <GlobalStyle/>
-        
-        <StyledJokeDeviceWrapper>
-          <div className="App-header">
-          <StyledDadHead src={pic} className="App-logo" alt="logo"/>
-          <StyledH2>Silly Dad Jokes</StyledH2>
+        <div className="App-header">
+          <SiteIcon src={pic} className="App-logo" alt="logo"/>
+          <SiteTitle>Silly Dad Jokes</SiteTitle>
         </div>
+        <JokeDeviceWrapper>
          <JokeDevice/>
-         </StyledJokeDeviceWrapper>
+        </JokeDeviceWrapper>
       </div>
     );
   }

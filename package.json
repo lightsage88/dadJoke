@@ -11,7 +11,9 @@
     "react-spinners": "^0.5.4",
     "styled-components": "^4.3.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "react-addons-css-transition-group": "^15.6.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

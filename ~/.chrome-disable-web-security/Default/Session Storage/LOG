@@ -1,18 +1,13 @@
-2019/06/07-15:04:34.623 4348 Reusing MANIFEST Session Storage/MANIFEST-000001
-2019/06/07-15:04:34.623 4348 Recovering log #3
-2019/06/07-15:04:34.623 4348 Reusing old log Session Storage/000003.log 
-2019/06/07-15:34:58.351 46f4 Level-0 table #5: started
-2019/06/07-15:34:58.471 46f4 Level-0 table #5: 15719 bytes OK
-2019/06/07-15:34:58.550 46f4 Delete type=0 #3
-2019/06/07-15:51:54.740 48ad Level-0 table #7: started
-2019/06/07-15:51:54.795 48ad Level-0 table #7: 16824 bytes OK
-2019/06/07-15:51:54.862 48ad Delete type=0 #4
-2019/06/07-16:07:22.469 49fd Level-0 table #9: started
-2019/06/07-16:07:22.615 49fd Level-0 table #9: 16518 bytes OK
-2019/06/07-16:07:22.738 49fd Delete type=0 #6
-2019/06/07-16:15:35.379 4d1d Level-0 table #11: started
-2019/06/07-16:15:35.499 4d1d Level-0 table #11: 15051 bytes OK
-2019/06/07-16:15:35.623 4d1d Delete type=0 #8
-2019/06/07-16:55:20.278 50d9 Level-0 table #13: started
-2019/06/07-16:55:20.403 50d9 Level-0 table #13: 15768 bytes OK
-2019/06/07-16:55:20.493 50d9 Delete type=0 #10
+2019/06/08-16:59:14.344 7a2b Reusing MANIFEST Session Storage/MANIFEST-000001
+2019/06/08-19:44:45.737 7dcd Level-0 table #5: started
+2019/06/08-19:44:45.805 7dcd Level-0 table #5: 13552 bytes OK
+2019/06/08-19:44:45.887 7dcd Delete type=0 #3
+2019/06/08-19:50:53.912 7fb9 Level-0 table #7: started
+2019/06/08-19:50:53.970 7fb9 Level-0 table #7: 33835 bytes OK
+2019/06/08-19:50:54.016 7fb9 Delete type=0 #4
+2019/06/08-22:59:09.779 123c Level-0 table #9: started
+2019/06/08-22:59:09.935 123c Level-0 table #9: 24731 bytes OK
+2019/06/08-22:59:10.015 123c Delete type=0 #6
+2019/06/08-23:41:36.050 12cf Level-0 table #11: started
+2019/06/08-23:41:36.105 12cf Level-0 table #11: 18355 bytes OK
+2019/06/08-23:41:36.162 12cf Delete type=0 #8

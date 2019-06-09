@@ -3,7 +3,8 @@ import JokeText from './JokeText';
 import LoadAnimation from './LoadAnimation';
 import styled from 'styled-components';
 
-const StyledJokeDeviceDiv = styled.div`
+
+const JokeDeviceDiv = styled.div`
     position: relative;
     width: -webkit-fill-available;
     display: flex;
@@ -11,7 +12,7 @@ const StyledJokeDeviceDiv = styled.div`
     align-items: center;
 `;
 
-const Button = styled.button`
+const JokeDeviceButton= styled.button`
     background-color: red;
     background-image: linear-gradient(red, lightcoral);
     display: inline-block;
@@ -95,8 +96,9 @@ export class JokeDevice extends React.Component{
             response.json()
             .then((data)=>{
                 this.setupLoadAndTime();
-
+                if(data.joke !== '' || undefined) {
                 this.waitToDisplayJoke(data.joke, this.state.milliseconds);
+                }
 
                 
             });
@@ -117,18 +119,18 @@ export class JokeDevice extends React.Component{
 
     render(){
         return(
-        
-            <StyledJokeDeviceDiv id="jokeDeviceDiv">
+            <JokeDeviceDiv id="jokeDeviceDiv">
                 <StyledH3>Dad Gummit</StyledH3>
-                <Button id="jokeDeviceButton" onClick={(e)=>this.retrieveJoke()}>
+                
+                <JokeText text={this.state.joke} animationLength={'7s'}/>
+
+                <JokeDeviceButton id="jokeDeviceButton" onClick={()=>this.retrieveJoke()}>
                     Press Me!
-                </Button>
+                </JokeDeviceButton>
 
-
-                <JokeText text={this.state.joke} animateText={this.state.animateText}/>
                 <LoadAnimation on={this.state.loading} time={this.state.milliseconds}/>
-            </StyledJokeDeviceDiv>
-        )
+            </JokeDeviceDiv>
+        );
     }
 }
 

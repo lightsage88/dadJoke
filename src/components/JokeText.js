@@ -1,5 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
+
+
+//Here is a bouncing animation for the text when it comes in
 const bounce = keyframes`
 
 from {
@@ -38,34 +41,62 @@ from {
   }
 `;
 
-let StyledP = styled.p`
+const JokeTextDiv = styled.div`
+  min-height: 15rem;
+`;
 
- 
-    -webkit-animation: ${bounce} 7s;
-    animation: ${bounce} 7s;
-  
-    
+//The StyledP is made with its CSS rules,
+//We interpolate the previously made variable
+//Referencing the bounce animation
 
+const StyledP = styled.p`
+    -webkit-animation: ${bounce} 3s;
+    animation: ${bounce} 3s;
     font-family: 'Josefin', serif;
     font-size: 2.5rem;
 `;
 
+
 export class JokeText extends React.Component{
     constructor(props){
         super(props);
+//In the state I make animateText be false so that
+//when the incoming prop with the text of the joke comes in later
+//it will be set to false so that when 
         this.state={
-            joke: ''
+            animateText: false,
+            text: null
         };
       
     }
 
+    componentWillReceiveProps(incomingProps){
+       
+        if(incomingProps.text !== ''){
+
+            this.setState({
+                text: incomingProps.text,
+                animateText: true
+
+            })
+        } else {
+            this.setState({
+                animateText: false
+            });
+        }
+
+    }
+
     render(){
-        console.log(this.props.text);
-        
+
+      const jokeText = this.state.animateText === true ? <StyledP>{this.state.text}</StyledP> : '';
+  
         return(
-            <div id="jokeTextDiv">
-                <StyledP data-animate={this.props.animateText}>{this.props.text}</StyledP>
-            </div>
+            <JokeTextDiv>
+              
+                    {jokeText}
+               
+            </JokeTextDiv>
         );
     }
 }
