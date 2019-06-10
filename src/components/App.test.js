@@ -7,6 +7,8 @@ it('renders without crashing', () => {
   expect(wrapper.find('.App').length).toBe(1);
 });
 
+
+
 it('renders the styled SiteIcon element', ()=>{
   const wrapper = shallow(<App />);
   expect(wrapper.find('#siteIcon').length).toBe(1);

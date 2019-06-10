@@ -15,7 +15,7 @@ const JokeDeviceDiv = styled.div`
 const JokeDeviceButton= styled.button`
     background-color: red;
     background-image: linear-gradient(red, lightcoral);
-    display: inline-block;
+    display: block;
     padding: 1.5rem 2.5rem;
 
     text-decoration: none;

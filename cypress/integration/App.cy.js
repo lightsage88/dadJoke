@@ -1,0 +1,48 @@
+
+describe('It opens up the app', ()=>{
+    it('opens up the app', ()=>{
+        cy.visit("http://localhost:3000");
+    });
+});
+
+describe('How our app acknowledges the global style variables set', ()=>{
+    it('acknowledges that we have set our HTML\'s font size to 10px', ()=>{
+        cy.get('HTML').should('have.css', 'font-size', '10px');
+    });
+    //Todo: Figure out the way to test for imported font-families 
+    // it('acknowledges our new font-families', ()=>{
+    //     cy.get('body').should()
+    // })
+});
+
+
+describe('How it renders the styled SiteIcon Element', ()=>{
+    //Todo: Get plugins from Cypress to test images.
+    it('will show an icon from Fallout', ()=>{
+        cy.get("#siteIcon").should('have.attr', 'src');
+    });
+    it('will have attributes of className or class and alt', ()=>{
+        cy.get('#siteIcon').should('have.attr', 'class');
+        cy.get('#siteIcon').should('have.attr', 'alt');
+    })
+})
+
+describe('How it renders the styled SiteTitle Element', ()=>{
+    it('will show Silly Dad Jokes at first', ()=>{
+        cy.get('#siteTitle').should('contain','Silly Dad Jokes');  
+    });
+
+    it('will have the correct styles for Silly Dad Jokes', ()=>{
+        cy.get('#siteTitle')
+            .should('have.css', 'color', 'rgb(220, 20, 60)')
+            .should('have.css', 'font-family', '"Luckiest Guy", serif')
+            .should('have.css', 'font-size', '30px')
+            .should('have.css', 'text-shadow', 'rgb(245, 245, 245) 4px 1px 5px')
+            .should('have.css', '-webkit-text-stroke-color', 'rgb(255, 228, 196)')
+            .should('have.css', '-webkit-text-stroke-width', '2px')
+            .should('have.css', 'animation')
+    });
+
+    
+});
+
