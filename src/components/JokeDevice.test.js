@@ -12,6 +12,6 @@ it('renders JokeDevice without error', ()=>{
 it('should fire "retrieveJoke" once componentDidMount fires', ()=>{
     const spy = jest.spyOn(JokeDevice.prototype, 'retrieveJoke');
     const wrapper = mount(<JokeDevice/>);
-    wrapper.instance().JokeDevice();
+    wrapper.instance().retrieveJoke();
     expect(spy).toHaveBeenCalled();
 })

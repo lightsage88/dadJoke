@@ -1,0 +1,82 @@
+86435ea745a6897266d6e9ea577080af
+/* istanbul ignore next */'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/adrian/Development/dadJoke/src/components/LoadAnimation.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_reactSpinners = require('react-spinners');
+var /* istanbul ignore next */_styledComponents = require('styled-components'); /* istanbul ignore next */var _styledComponents2 = _interopRequireDefault(_styledComponents);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+//Here we have the hinge animation, which makes things dangle and drop
+
+
+const hinge = /* istanbul ignore next */_styledComponents. /* istanbul ignore next */keyframes`
+    0% {
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+
+    }
+
+    20%,
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 80deg);
+        transform: rotate3d(0, 0, 1, 80deg);
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+    }
+
+    40%,
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, 60deg);
+        transform: rotate3d(0, 0, 1, 60deg);
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, 700px, 0);
+        transform: translate3d(0, 700px, 0);
+        opacity: 0;
+    }
+`;
+
+//TODO: ??
+const StyledPacmanLoader = /* istanbul ignore next */(0, /* istanbul ignore next */_styledComponents2. /* istanbul ignore next */default)( /* istanbul ignore next */_reactSpinners. /* istanbul ignore next */PacmanLoader)`
+  
+`;
+
+const StyledLoadMessage = /* istanbul ignore next */_styledComponents2. /* istanbul ignore next */default.h3`
+
+`;
+
+const StyledLoadAnimationDiv = /* istanbul ignore next */_styledComponents2. /* istanbul ignore next */default.div`
+    margin: auto;
+    
+
+    -webkit-animation: ${props => props.on ? 'inherit' : hinge};
+    -webkit-animation-duration: 3s;
+    transition: right  ease-in 2s;
+
+
+    opacity: ${props => props.on ? 1 : 0};
+
+    position: relative;
+    text-align: center;
+    text-align: -webkit-center;
+    
+`;
+
+function LoadAnimation(props) {
+    return (
+        /* istanbul ignore next */_react2.default.createElement(StyledLoadAnimationDiv, /* istanbul ignore next */{ id: 'loadAnimationDiv', on: props.on, __source: { fileName: _jsxFileName, lineNumber: 74 }, __self: this },
+            /* istanbul ignore next */_react2.default.createElement(StyledLoadMessage, /* istanbul ignore next */{ id: 'styledLoadMessage', __source: { fileName: _jsxFileName, lineNumber: 75 }, __self: this }, props.loadMessage),
+            /* istanbul ignore next */_react2.default.createElement(StyledPacmanLoader, /* istanbul ignore next */{ id: 'styledPacmanLoader', __source: { fileName: _jsxFileName, lineNumber: 76 }, __self: this })));
+
+
+} /* istanbul ignore next */exports.default =
+
+LoadAnimation;
