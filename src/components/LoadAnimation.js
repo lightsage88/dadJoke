@@ -2,12 +2,17 @@ import React from 'react';
 import {PacmanLoader} from 'react-spinners';
 import styled, {keyframes} from 'styled-components';
 
+//Here we have the hinge animation, which makes things dangle and drop
+
+
 const hinge = keyframes`
     0% {
         -webkit-transform-origin: top left;
         transform-origin: top left;
         -webkit-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out;
+        opacity: 1;
+
     }
 
     20%,
@@ -31,46 +36,44 @@ const hinge = keyframes`
         opacity: 1;
     }
 
-    to {
+    100% {
         -webkit-transform: translate3d(0, 700px, 0);
         transform: translate3d(0, 700px, 0);
         opacity: 0;
     }
 `;
 
-
+//TODO: ??
 const StyledPacmanLoader = styled(PacmanLoader)`
   
 `;
 
+const StyledLoadMessage = styled.h3`
+
+`
+
 const StyledLoadAnimationDiv = styled.div`
-    border: solid;
     display: inline;
     margin: auto;
-    opacity: ${props => { 
-        const visible = props.on;
-            if(visible === true) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-    };
-
-    -webkit-animation: ${props => props.on ? 0 : hinge };
-    -webkit-animation-duration: 3s;
-
     
-    position: fixed;
+
+    -webkit-animation: ${props => props.on ? 'inherit' : hinge };
+    -webkit-animation-duration: ${props => props.on ? '3s' : '3s'};
+    transition: right  ease-in 2s;
+
+
+    opacity: ${props => props.on ? 1 : 0};
+
+    position: relative;
     text-align: center;
     text-align: -webkit-center;
-    transition: 0.5s;
-
+    
 `;
 
 function LoadAnimation(props){
     return(
         <StyledLoadAnimationDiv id="loadAnimationDiv" on={props.on}>
+            <StyledLoadMessage>{props.loadMessage}</StyledLoadMessage>
             <StyledPacmanLoader/>
         </StyledLoadAnimationDiv>
     );

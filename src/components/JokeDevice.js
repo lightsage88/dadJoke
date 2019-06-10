@@ -31,7 +31,6 @@ const JokeDeviceButton= styled.button`
         left: 0.2rem;
         width: calc(100% - 0.4rem);
         height: 50%;
-        background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
     }
 
 `;
@@ -47,8 +46,9 @@ export class JokeDevice extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            loading: false,
-            animateText: true
+            loading: true,
+            animateText: true,
+            loadMessage: ''
         }
     }
 
@@ -56,10 +56,22 @@ export class JokeDevice extends React.Component{
         this.retrieveJoke();
     }
 
-    setLoadingToTrue(){
+    pickLoadMessage(){
+        const loadMessages = [
+            'PacMan was popular when I was a boy, when does the next one come out?',
+            'Have you tried talking to a manager? You shouldn\'t only apply online.',
+            'Trickle down economics works!',
+            'I know you like opera, but sing popular things, like Perry Como and Sinatra.',
+            'Bernie Sanders is a communist!'
+        ];
+
+        console.log(loadMessages.length);
+        console.log(Math.floor(Math.random(1)*5));
         this.setState({
-            loading: true
+            loadMessage: loadMessages[Math.floor(Math.random(1)*5)]
         });
+
+
     }
 
     calculateLoadTime(){
@@ -71,12 +83,12 @@ export class JokeDevice extends React.Component{
 
     setupLoadAndTime(){
         this.calculateLoadTime();
-        this.setLoadingToTrue();
     }
 
 
-
     retrieveJoke(){
+        this.pickLoadMessage();
+
         this.setState({
             joke: ''
         });
@@ -100,7 +112,6 @@ export class JokeDevice extends React.Component{
                 this.waitToDisplayJoke(data.joke, this.state.milliseconds);
                 }
 
-                
             });
         })
         .catch((err)=>{
@@ -109,6 +120,11 @@ export class JokeDevice extends React.Component{
     }
 
     waitToDisplayJoke(joke, time){
+    //While not needed for the first fetch, subsequent presses of the button
+    //causing later fetches will require that the state's loading value gets reset to true
+        this.setState({
+            loading: true
+        });
         setTimeout(()=>{
             this.setState({
                 joke,
@@ -118,17 +134,24 @@ export class JokeDevice extends React.Component{
     }
 
     render(){
+
+    //When you click the styled component 'JokeDeviceButton', then a callback function is fired which,
+    //in turn, fires this component's function "retrieveJoke". That function sets off the chain reaction
+    //which gets the joke from the API and more.
+
+    //LoadAnimation gets sent the state's loading and milliseconds properties as props.
+    //But we want it in seconds.
         return(
             <JokeDeviceDiv id="jokeDeviceDiv">
-                <StyledH3>Dad Gummit</StyledH3>
+                <LoadAnimation on={this.state.loading}  loadMessage={this.state.loadMessage}/>
+
                 
-                <JokeText text={this.state.joke} animationLength={'7s'}/>
+                <JokeText text={this.state.joke}/>
 
                 <JokeDeviceButton id="jokeDeviceButton" onClick={()=>this.retrieveJoke()}>
                     Press Me!
                 </JokeDeviceButton>
 
-                <LoadAnimation on={this.state.loading} time={this.state.milliseconds}/>
             </JokeDeviceDiv>
         );
     }

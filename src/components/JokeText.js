@@ -50,8 +50,8 @@ const JokeTextDiv = styled.div`
 //Referencing the bounce animation
 
 const StyledP = styled.p`
-    -webkit-animation: ${bounce} 3s;
-    animation: ${bounce} 3s;
+    -webkit-animation: ${bounce} 2s;
+    animation: ${bounce} 2s;
     font-family: 'Josefin', serif;
     font-size: 2.5rem;
 `;
@@ -69,7 +69,12 @@ export class JokeText extends React.Component{
         };
       
     }
-
+//We use the life-cycle method "componentWillReceiveProps" to
+//keep tabs on the incoming props from JokeDevice, one of which
+//will be derived from our Fetch call to the API.
+//When we get actual text from the API, we set it to this component's
+//text key in the class, and make the animateText key's value be true
+//otherwise we make it false
     componentWillReceiveProps(incomingProps){
        
         if(incomingProps.text !== ''){
@@ -88,12 +93,13 @@ export class JokeText extends React.Component{
     }
 
     render(){
-
+//If the state's animateText key has a value of true, then we make the const 'JokeText' equal a StyledP element
+//with the state's text as its contents. If animateText's key has a value of false, then nothing is returned
       const jokeText = this.state.animateText === true ? <StyledP>{this.state.text}</StyledP> : '';
   
         return(
             <JokeTextDiv>
-              
+            
                     {jokeText}
                
             </JokeTextDiv>
