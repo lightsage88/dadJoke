@@ -1,0 +1,14 @@
+/* istanbul ignore next */'use strict';var _jsxFileName = '/home/adrian/Development/jrtest/src/components/JokeDevice.test.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_enzyme = require('enzyme');
+var /* istanbul ignore next */_JokeDevice = require('./JokeDevice'); /* istanbul ignore next */var _JokeDevice2 = _interopRequireDefault(_JokeDevice);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+it('renders JokeDevice without error', () => {
+    const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */shallow)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 6 }, __self: undefined }));
+    expect(wrapper.find('#jokeDeviceDiv').length).toBe(1);
+});
+
+it('should fire "retrieveJoke" once componentDidMount fires', () => {
+    const spy = jest.fn( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default.prototype, 'componentDidMount');
+    const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */mount)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: undefined }));
+    expect(spy).toHaveBeenCalled();
+});

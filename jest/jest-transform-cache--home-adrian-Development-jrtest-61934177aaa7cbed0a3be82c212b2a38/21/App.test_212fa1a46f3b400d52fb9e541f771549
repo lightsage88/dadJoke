@@ -1,0 +1,26 @@
+/* istanbul ignore next */'use strict';var _jsxFileName = '/home/adrian/Development/jrtest/src/components/App.test.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_enzyme = require('enzyme');
+var /* istanbul ignore next */_App = require('./App'); /* istanbul ignore next */var _App2 = _interopRequireDefault(_App);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// it('renders without crashing', () => {
+//   const wrapper = shallow(<App/>);
+//   expect(wrapper.find('.App').length).toBe(1);
+// });
+
+it('renders the styled SiteIcon element', () => {
+  const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */shallow)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_App2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: undefined }));
+  expect(wrapper.find('#siteIcon').length).toBe(1);
+  expect(wrapper.find('#siteIcon').length).not.toBe(10);
+});
+
+it('renders the styled SiteTitle element', () => {
+  const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */shallow)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_App2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: undefined }));
+  expect(wrapper.find('#siteTitle').length).toBe(1);
+  expect(wrapper.find('#siteTitle').length).not.toBe(10);
+});
+
+it('renders the styled JokeDeviceWrapper element', () => {
+  const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */shallow)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_App2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: undefined }));
+  expect(wrapper.find('#jokeDeviceWrapper').length).toBe(1);
+  expect(wrapper.find('#jokeDevice').length).toBe(1);
+});
