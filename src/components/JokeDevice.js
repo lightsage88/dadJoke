@@ -86,7 +86,7 @@ export class JokeDevice extends React.Component{
         this.setState({
             joke: ''
         });
-        fetch("https://icanhazdadjoke.com", 
+        return fetch("https://icanhazdadjoke.com", 
             {
                 method: "GET",
                 headers: {
@@ -109,7 +109,7 @@ export class JokeDevice extends React.Component{
             });
         })
         .catch((err)=>{
-            console.log(err);
+            console.error(err);
         });
     }
 

@@ -1,0 +1,25 @@
+0a7b68603ca5004f135789a042747e70
+/* istanbul ignore next */'use strict';var _jsxFileName = '/home/adrian/Development/dadJoke/src/components/JokeDevice.test.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_enzyme = require('enzyme');
+var /* istanbul ignore next */_JokeDevice = require('./JokeDevice'); /* istanbul ignore next */var _JokeDevice2 = _interopRequireDefault(_JokeDevice);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+it('renders JokeDevice without error', () => {
+    const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */shallow)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 6 }, __self: undefined }));
+    expect(wrapper.find('#jokeDeviceDiv').exists()).toEqual(true);
+    expect(wrapper.find('#jokeDeviceDiv').length).toBe(1);
+
+});
+
+it('should fire "retrieveJoke" once componentDidMount fires', () => {
+    const spy = jest.spyOn( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default.prototype, 'retrieveJoke');
+    const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */mount)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: undefined }));
+    wrapper.instance().retrieveJoke();
+    expect(spy).toHaveBeenCalled();
+});
+
+it('should fire "pickLoadMessage" as a result of the above test', () => {
+    const spy = jest.spyOn( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default.prototype, 'pickLoadMessage');
+    const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */mount)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_JokeDevice2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: undefined }));
+    wrapper.instance().pickLoadMessage();
+    expect(spy).not.toHaveBeenCalled();
+});
