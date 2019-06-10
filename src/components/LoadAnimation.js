@@ -72,8 +72,8 @@ const StyledLoadAnimationDiv = styled.div`
 function LoadAnimation(props){
     return(
         <StyledLoadAnimationDiv id="loadAnimationDiv" on={props.on}>
-            <StyledLoadMessage>{props.loadMessage}</StyledLoadMessage>
-            <StyledPacmanLoader/>
+            <StyledLoadMessage id="styledLoadMessage">{props.loadMessage}</StyledLoadMessage>
+            <StyledPacmanLoader id="styledPacmanLoader"/>
         </StyledLoadAnimationDiv>
     );
 }
