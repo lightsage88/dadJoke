@@ -98,7 +98,7 @@ export class JokeText extends React.Component{
       const jokeText = this.state.animateText === true ? <StyledP>{this.state.text}</StyledP> : '';
   
         return(
-            <JokeTextDiv>
+            <JokeTextDiv id="jokeTextDiv">
             
                     {jokeText}
                

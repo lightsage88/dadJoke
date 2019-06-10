@@ -53,12 +53,11 @@ const StyledLoadMessage = styled.h3`
 `
 
 const StyledLoadAnimationDiv = styled.div`
-    display: inline;
     margin: auto;
     
 
     -webkit-animation: ${props => props.on ? 'inherit' : hinge };
-    -webkit-animation-duration: ${props => props.on ? '3s' : '3s'};
+    -webkit-animation-duration: 3s;
     transition: right  ease-in 2s;
 
 
