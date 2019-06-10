@@ -19,3 +19,9 @@
 2019/06/09-17:07:46.428 5ca1 Level-0 table #19: started
 2019/06/09-17:07:46.495 5ca1 Level-0 table #19: 16295 bytes OK
 2019/06/09-17:07:46.602 5ca1 Delete type=0 #15
+2019/06/09-19:17:33.865 6d07 Level-0 table #21: started
+2019/06/09-19:17:33.932 6d07 Level-0 table #21: 17823 bytes OK
+2019/06/09-19:17:34.367 6d07 Delete type=0 #18
+2019/06/09-19:40:05.755 719f Level-0 table #23: started
+2019/06/09-19:40:05.848 719f Level-0 table #23: 20060 bytes OK
+2019/06/09-19:40:05.928 719f Delete type=0 #20

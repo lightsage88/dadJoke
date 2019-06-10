@@ -35,11 +35,7 @@ const JokeDeviceButton= styled.button`
 
 `;
 
-const StyledH3 = styled.h3`
-    font-weight: 800;
-    font-family: fantasy;
-    font-style: italic;
-`;
+    
 
 
 export class JokeDevice extends React.Component{
@@ -56,22 +52,20 @@ export class JokeDevice extends React.Component{
         this.retrieveJoke();
     }
 
+    //This function provides us with an array of strings to pass into our component's state
+    //when we are still seeing the loading Pac-Man Icon. These are the sorts of things people in my
+    //parents' generation say. I thought it would be a nice touch to include them.
     pickLoadMessage(){
-        const loadMessages = [
-            'PacMan was popular when I was a boy, when does the next one come out?',
+        const thingsBoomersSay = [
+            'Pac-Man was popular when I was young, when does the next one come out?',
             'Have you tried talking to a manager? You shouldn\'t only apply online.',
             'Trickle down economics works!',
             'I know you like opera, but sing popular things, like Perry Como and Sinatra.',
             'Bernie Sanders is a communist!'
         ];
-
-        console.log(loadMessages.length);
-        console.log(Math.floor(Math.random(1)*5));
         this.setState({
-            loadMessage: loadMessages[Math.floor(Math.random(1)*5)]
+            loadMessage: thingsBoomersSay[Math.floor(Math.random(1)*5)]
         });
-
-
     }
 
     calculateLoadTime(){

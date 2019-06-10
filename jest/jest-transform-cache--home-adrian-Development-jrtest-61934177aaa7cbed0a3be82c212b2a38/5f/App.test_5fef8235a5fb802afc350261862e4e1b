@@ -1,0 +1,16 @@
+/* istanbul ignore next */'use strict';var _jsxFileName = '/home/adrian/Development/jrtest/src/App.test.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_reactDom = require('react-dom'); /* istanbul ignore next */var _reactDom2 = _interopRequireDefault(_reactDom);
+var /* istanbul ignore next */_chai = require('chai');
+var /* istanbul ignore next */_enzyme = require('enzyme');
+var /* istanbul ignore next */_App = require('./App'); /* istanbul ignore next */var _App2 = _interopRequireDefault(_App);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  /* istanbul ignore next */_reactDom2. /* istanbul ignore next */default.render( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_App2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: undefined }), div);
+});
+
+it('renders the styled SiteIcon element', () => {
+  const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */shallow)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_App2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: undefined }));
+  /* istanbul ignore next */(0, /* istanbul ignore next */_chai. /* istanbul ignore next */expect)(wrapper.find('#siteIcon')).to.have.lengthOf(1);
+  /* istanbul ignore next */(0, /* istanbul ignore next */_chai. /* istanbul ignore next */expect)(wrapper.find('#siteIcon')).attr('src').toContain('bocho');
+});
