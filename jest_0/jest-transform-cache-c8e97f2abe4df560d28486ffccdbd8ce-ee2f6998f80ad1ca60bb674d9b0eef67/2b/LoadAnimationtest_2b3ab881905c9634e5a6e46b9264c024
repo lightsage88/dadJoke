@@ -1,0 +1,26 @@
+17ac7f78938b88e2fb7bb7705d8ce355
+/* istanbul ignore next */'use strict';var _jsxFileName = '/home/adrian/Development/dadJoke/src/components/LoadAnimation.test.js';var /* istanbul ignore next */_react = require('react'); /* istanbul ignore next */var _react2 = _interopRequireDefault(_react);
+var /* istanbul ignore next */_enzyme = require('enzyme');
+var /* istanbul ignore next */_reactSpinners = require('react-spinners');
+var /* istanbul ignore next */_LoadAnimation = require('./LoadAnimation'); /* istanbul ignore next */var _LoadAnimation2 = _interopRequireDefault(_LoadAnimation);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+describe('LoadAnimation rendering', () => {
+
+    it('should render LoadAnimation', () => {
+        const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */shallow)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_LoadAnimation2. /* istanbul ignore next */default, /* istanbul ignore next */{ on: 'true', loadMessage: 'Hello', __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: undefined }));
+        expect(wrapper.find('#loadAnimationDiv').exists()).toEqual(true);
+    });
+
+    it('should render StyledLoadMessage', () => {
+        const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */mount)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_LoadAnimation2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: undefined }));
+        expect(wrapper.find("#styledLoadMessage").exists()).toEqual(false);
+    });
+
+    it('should render the PacmanLoader', () => {
+        const wrapper = /* istanbul ignore next */(0, /* istanbul ignore next */_enzyme. /* istanbul ignore next */mount)( /* istanbul ignore next */_react2.default.createElement( /* istanbul ignore next */_LoadAnimation2. /* istanbul ignore next */default, /* istanbul ignore next */{ __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: undefined }));
+        expect(wrapper.find(".css-1anlcob-pacmanStyle").exists()).toEqual(true);
+    });
+
+});

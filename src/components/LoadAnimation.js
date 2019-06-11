@@ -49,14 +49,14 @@ const StyledPacmanLoader = styled(PacmanLoader)`
 `;
 
 const StyledLoadMessage = styled.h3`
-
+    font-size: 3rem;
 `
 
 const StyledLoadAnimationDiv = styled.div`
     margin: auto;
     
 
-    -webkit-animation: ${props => props.on ? 'inherit' : hinge };
+    -webkit-animation: ${props => props.on ? 0 : hinge };
     -webkit-animation-duration: 3s;
     transition: right  ease-in 2s;
 
@@ -72,8 +72,9 @@ const StyledLoadAnimationDiv = styled.div`
 function LoadAnimation(props){
     return(
         <StyledLoadAnimationDiv id="loadAnimationDiv" on={props.on}>
-            <StyledLoadMessage id="styledLoadMessage">{props.loadMessage}</StyledLoadMessage>
             <StyledPacmanLoader id="styledPacmanLoader"/>
+            <StyledLoadMessage id="styledLoadMessage">{props.loadMessage}</StyledLoadMessage>
+
         </StyledLoadAnimationDiv>
     );
 }

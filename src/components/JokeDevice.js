@@ -15,6 +15,7 @@ const JokeDeviceDiv = styled.div`
 const JokeDeviceButton= styled.button`
     background-color: red;
     background-image: linear-gradient(red, lightcoral);
+    border-radius: 0.3rem;
     display: block;
     padding: 1.5rem 2.5rem;
 
@@ -137,10 +138,9 @@ export class JokeDevice extends React.Component{
     //But we want it in seconds.
         return(
             <JokeDeviceDiv id="jokeDeviceDiv">
-                <LoadAnimation on={this.state.loading}  loadMessage={this.state.loadMessage}/>
-
-                
                 <JokeText text={this.state.joke}/>
+
+                <LoadAnimation on={this.state.loading}  loadMessage={this.state.loadMessage}/>
 
                 <JokeDeviceButton id="jokeDeviceButton" onClick={()=>this.retrieveJoke()}>
                     Press Me!

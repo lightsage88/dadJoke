@@ -85,6 +85,7 @@ class App extends Component {
       border: solid;
       display: grid;
       align-content: center;
+      
     `;
 
     const SiteTitle = styled.h2`
